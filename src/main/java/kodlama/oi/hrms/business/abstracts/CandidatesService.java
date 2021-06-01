@@ -4,10 +4,11 @@ import java.util.List;
 
 import kodlama.oi.hrms.core.utilities.results.DataResult;
 import kodlama.oi.hrms.core.utilities.results.Result;
-import kodlama.oi.hrms.entities.concretes.JobPosition;
+import kodlama.oi.hrms.entities.concretes.Candidates;
 
 
-public interface JobPostionService {
-	DataResult<List<JobPosition>> getAll();
-	Result add(JobPosition jobPosition);
+public interface CandidatesService {
+	DataResult<List<Candidates>> getAll();
+	Result add(Candidates candidates);
+
 }

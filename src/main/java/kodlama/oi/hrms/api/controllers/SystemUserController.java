@@ -9,30 +9,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import kodlama.oi.hrms.business.abstracts.JobPostionService;
+import kodlama.oi.hrms.business.abstracts.SystemUserService;
 import kodlama.oi.hrms.core.utilities.results.DataResult;
 import kodlama.oi.hrms.core.utilities.results.Result;
-import kodlama.oi.hrms.entities.concretes.JobPosition;
+import kodlama.oi.hrms.entities.concretes.SystemUser;
 
 @RestController
-@RequestMapping("/api/jobposition")
-public class JobPositionController {
+@RequestMapping("/api/systemuser")
+public class SystemUserController {
 	
-	private JobPostionService jobPositionService;
-
+	private SystemUserService systemUserService;
+	
 	@Autowired
-	public JobPositionController(JobPostionService jobPositionService) {
+	public SystemUserController(SystemUserService systemUserService) {
 		super();
-		this.jobPositionService = jobPositionService;
+		this.systemUserService=systemUserService;
+		
 	}
-	
+
 	@GetMapping("/getall")
-	public DataResult<List<JobPosition>> getAll(){
-		return this.jobPositionService.getAll();
+	public DataResult<List<SystemUser>> getAll(){
+		return this.systemUserService.getAll();
 	}
 	@PostMapping("/add")
-	public Result add(@RequestBody JobPosition jobPosition) {
-		return this.jobPositionService.add(jobPosition);
+	public Result add(@RequestBody SystemUser systemUser) {
+		return this.systemUserService.add(systemUser);
 	}
-
 }

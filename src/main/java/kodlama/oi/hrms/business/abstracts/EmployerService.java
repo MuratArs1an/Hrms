@@ -4,10 +4,9 @@ import java.util.List;
 
 import kodlama.oi.hrms.core.utilities.results.DataResult;
 import kodlama.oi.hrms.core.utilities.results.Result;
-import kodlama.oi.hrms.entities.concretes.JobPosition;
+import kodlama.oi.hrms.entities.concretes.Employer;
 
-
-public interface JobPostionService {
-	DataResult<List<JobPosition>> getAll();
-	Result add(JobPosition jobPosition);
+public interface EmployerService {
+	DataResult<List<Employer>> getAll();
+	Result add(Employer employer);
 }
