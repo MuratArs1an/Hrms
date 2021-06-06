@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kodlama.oi.hrms.adapter.MernisServiceAdapter;
+import kodlama.oi.hrms.business.abstracts.CandidateCheckService;
 import kodlama.oi.hrms.business.abstracts.CandidatesService;
 import kodlama.oi.hrms.core.utilities.results.DataResult;
 import kodlama.oi.hrms.core.utilities.results.ErrorResult;
@@ -19,8 +19,9 @@ import kodlama.oi.hrms.entities.concretes.Candidates;
 public class CandidatesManager implements CandidatesService{
 	
 	private CandidatesDao candidatesDao;
-	private MernisServiceAdapter mernisServiceAdapter;
 	private CheckManager checkManager;
+	private CandidateCheckService candidateCheckService;
+
 	
 	@Autowired
 	public CandidatesManager(CandidatesDao candidatesDao) {
@@ -36,7 +37,7 @@ public class CandidatesManager implements CandidatesService{
 
 	@Override
 	public Result add(Candidates candidates) {
-		if(mernisServiceAdapter.loginControl(candidates) && checkManager.emailControl() ) {
+		if(candidateCheckService.loginControl(candidates) && checkManager.emailControl() ) {
 			this.candidatesDao.save(candidates);
 			return new SuccessResult("Adaylar Kayit Edildi");
 			

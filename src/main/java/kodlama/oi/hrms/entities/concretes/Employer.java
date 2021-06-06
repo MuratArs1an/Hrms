@@ -1,9 +1,14 @@
 package kodlama.oi.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +23,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @PrimaryKeyJoinColumn(name="user_id")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "jobAdvertisements"})
 
 
 
@@ -38,5 +44,8 @@ public class Employer extends User {
 	
 	@Column(name="password_again")
 	private String passwordAgain;
+	
+	@OneToMany(mappedBy="employer")
+	private List<JobAdvertisement> jobAdvertisement;
 
 }	

@@ -12,23 +12,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="positions")
 @Data
+@Table(name="cities")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobPosition {
+public class Cities {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="position_id")
-	private int id;
+	@Column(name="city_id")
+	private int cityId;
 	
-	@Column(name="position_name")
-	private String positionName;
-
-
-	
-	
-
-	
+	@Column(name="city_name")
+	private String cityName;
 }

@@ -10,4 +10,5 @@ import kodlama.oi.hrms.entities.concretes.JobPosition;
 public interface JobPostionService {
 	DataResult<List<JobPosition>> getAll();
 	Result add(JobPosition jobPosition);
+	
 }

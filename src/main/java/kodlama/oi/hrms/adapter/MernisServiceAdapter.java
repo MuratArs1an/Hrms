@@ -14,7 +14,6 @@ public class MernisServiceAdapter implements CandidateCheckService {
 		try {
 			return client.TCKimlikNoDogrula(candidates.getNationalId(),candidates.getName().toUpperCase(),candidates.getSurname().toUpperCase(),candidates.getBirthYear());
 		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return false;
