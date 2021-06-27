@@ -9,6 +9,7 @@ import kodlama.oi.hrms.entities.concretes.Candidates;
 
 public interface CandidatesService {
 	DataResult<List<Candidates>> getAll();
+	DataResult<Candidates> getById(int id);
 	Result add(Candidates candidates);
 
 }

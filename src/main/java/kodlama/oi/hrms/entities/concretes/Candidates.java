@@ -1,5 +1,7 @@
 package kodlama.oi.hrms.entities.concretes;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -31,6 +33,7 @@ public class Candidates extends User{
 	
 	@Column(name="birth_year")
 	private int birthYear;
+	
 
 		
 

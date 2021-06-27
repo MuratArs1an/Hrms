@@ -49,4 +49,9 @@ public class CandidatesManager implements CandidatesService{
 		
 	}
 
+	@Override
+	public DataResult<Candidates> getById(int id) {
+		return new SuccessDataResult<>(this.candidatesDao.getById(id));
+	}
+
 }
